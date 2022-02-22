@@ -9,6 +9,18 @@ ball = {
             "w":10,
 }
 
+blocks = []
+
+for iy in range(0 ,8):
+    for ix in range(0,8):
+        color = "red"
+        if (iy + ix) % 2 == 1: color = "blue"
+        x1 = 4 + ix * block_size["x"]
+        x2 = x1 + block_size["x"]
+        y1 = 4 + iy * block_size["y"]
+        y2 = y1 + block_size["y"]
+        blocks.append([x1,y1,x2,y2,color])
+
 win = Tk()
 cv = Canvas(win, width=600, height=400)
 cv.pack()
